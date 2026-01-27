@@ -43,20 +43,41 @@ const ResearchSection = () => {
             <SurveyChart 
               direction="left"
               delay={0}
-              title="Satisfacción del usuario"
-              description="Nivel de satisfacción general con la experiencia actual"
+              title="¿Qué tipo de servicio contratás más seguido?"
+              description="Servicios más demandados por los usuarios encuestados"
+              bars={[
+                { label: 'Plomería y gas', value: 44, color: 'bg-accent' },
+                { label: 'Albañilería', value: 31, color: 'bg-primary' },
+                { label: 'Reparación electrodomésticos', value: 31, color: 'bg-primary/80' },
+                { label: 'Electricidad', value: 30, color: 'bg-primary/60' },
+                { label: 'Pintura', value: 12, color: 'bg-muted-foreground/60' },
+                { label: 'Mudanzas', value: 10, color: 'bg-muted-foreground/40' },
+              ]}
             />
             <SurveyChart 
               direction="right"
               delay={150}
-              title="Frecuencia de uso"
-              description="Con qué frecuencia los usuarios interactúan con el producto"
+              title="¿Cómo encontrás el contacto de los prestadores?"
+              description="Canales de descubrimiento de profesionales"
+              bars={[
+                { label: 'Referencia de conocidos', value: 49, color: 'bg-accent' },
+                { label: 'Redes sociales', value: 15, color: 'bg-primary' },
+                { label: 'Carteles callejeros', value: 6, color: 'bg-muted-foreground/60' },
+                { label: 'Recomendación inmobiliaria', value: 1, color: 'bg-muted-foreground/40' },
+              ]}
             />
             <SurveyChart 
               direction="left"
               delay={300}
-              title="Principales pain points"
-              description="Problemas más comunes reportados por los usuarios"
+              title="¿Qué tenés más en cuenta a la hora de contratar?"
+              description="Factores de decisión más importantes"
+              bars={[
+                { label: 'Reputación / Opiniones', value: 44, color: 'bg-accent' },
+                { label: 'Precio', value: 41, color: 'bg-primary' },
+                { label: 'Experiencia', value: 18, color: 'bg-primary/60' },
+                { label: 'Disponibilidad', value: 11, color: 'bg-muted-foreground/60' },
+                { label: 'Certificaciones / Licencias', value: 5, color: 'bg-muted-foreground/40' },
+              ]}
             />
           </div>
         </div>

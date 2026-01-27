@@ -1,13 +1,8 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import chartSatisfaction from '@/assets/chart-satisfaction.png';
-import chartFrequency from '@/assets/chart-frequency.png';
-import chartPainpoints from '@/assets/chart-painpoints.png';
+import SurveyChart from './SurveyChart';
 
 const ResearchSection = () => {
   const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
-  const { ref: chart1Ref, isVisible: chart1Visible } = useScrollAnimation({ threshold: 0.3 });
-  const { ref: chart2Ref, isVisible: chart2Visible } = useScrollAnimation({ threshold: 0.3 });
-  const { ref: chart3Ref, isVisible: chart3Visible } = useScrollAnimation({ threshold: 0.3 });
 
   return (
     <section className="py-24 px-6 md:px-12 lg:px-24 bg-surface-elevated">
@@ -44,61 +39,25 @@ const ResearchSection = () => {
             </p>
           </div>
 
-          {/* Chart Images with Slide Animation */}
           <div className="space-y-8">
-            {/* Chart 1 - Slide from Left */}
-            <div
-              ref={chart1Ref}
-              className="bg-card rounded-2xl p-6 shadow-sm border border-border overflow-hidden"
-              style={{
-                opacity: chart1Visible ? 1 : 0,
-                transform: chart1Visible ? 'translateX(0)' : 'translateX(-80px)',
-                transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)'
-              }}
-            >
-              <h4 className="font-display text-xl font-semibold mb-4">Satisfacción del usuario</h4>
-              <img 
-                src={chartSatisfaction} 
-                alt="Gráfico de satisfacción del usuario" 
-                className="w-full h-auto rounded-lg"
-              />
-            </div>
-
-            {/* Chart 2 - Slide from Right */}
-            <div
-              ref={chart2Ref}
-              className="bg-card rounded-2xl p-6 shadow-sm border border-border overflow-hidden"
-              style={{
-                opacity: chart2Visible ? 1 : 0,
-                transform: chart2Visible ? 'translateX(0)' : 'translateX(80px)',
-                transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s'
-              }}
-            >
-              <h4 className="font-display text-xl font-semibold mb-4">Frecuencia de uso</h4>
-              <img 
-                src={chartFrequency} 
-                alt="Gráfico de frecuencia de uso" 
-                className="w-full h-auto rounded-lg"
-              />
-            </div>
-
-            {/* Chart 3 - Slide from Left */}
-            <div
-              ref={chart3Ref}
-              className="bg-card rounded-2xl p-6 shadow-sm border border-border overflow-hidden"
-              style={{
-                opacity: chart3Visible ? 1 : 0,
-                transform: chart3Visible ? 'translateX(0)' : 'translateX(-80px)',
-                transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s'
-              }}
-            >
-              <h4 className="font-display text-xl font-semibold mb-4">Principales pain points</h4>
-              <img 
-                src={chartPainpoints} 
-                alt="Gráfico de principales pain points" 
-                className="w-full h-auto rounded-lg"
-              />
-            </div>
+            <SurveyChart 
+              direction="left"
+              delay={0}
+              title="Satisfacción del usuario"
+              description="Nivel de satisfacción general con la experiencia actual"
+            />
+            <SurveyChart 
+              direction="right"
+              delay={150}
+              title="Frecuencia de uso"
+              description="Con qué frecuencia los usuarios interactúan con el producto"
+            />
+            <SurveyChart 
+              direction="left"
+              delay={300}
+              title="Principales pain points"
+              description="Problemas más comunes reportados por los usuarios"
+            />
           </div>
         </div>
       </div>

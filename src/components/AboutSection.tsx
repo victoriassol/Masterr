@@ -7,7 +7,7 @@ const AboutSection = () => {
     <section className="py-24 px-6 md:px-12 lg:px-24 bg-surface-elevated">
       <div 
         ref={ref}
-        className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+        className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center"
       >
         {/* Text Content */}
         <div className={`space-y-6 ${isVisible ? 'opacity-100 animate-slide-in-left' : 'opacity-0'}`}>

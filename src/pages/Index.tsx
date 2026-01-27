@@ -2,6 +2,7 @@ import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import AboutSection from '@/components/AboutSection';
 import ResearchSection from '@/components/ResearchSection';
+import BenchmarkSection from '@/components/BenchmarkSection';
 import ProductShowcase from '@/components/ProductShowcase';
 
 const Index = () => {
@@ -12,6 +13,7 @@ const Index = () => {
         <Hero />
         <AboutSection />
         <ResearchSection />
+        <BenchmarkSection />
         <ProductShowcase />
       </main>
     </div>

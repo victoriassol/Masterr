@@ -1,5 +1,6 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import SurveyChart from './SurveyChart';
+import InsightCard from './InsightCard';
 
 const ResearchSection = () => {
   const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
@@ -78,6 +79,39 @@ const ResearchSection = () => {
                 { label: 'Disponibilidad', value: 11, color: 'bg-muted-foreground/60' },
                 { label: 'Certificaciones / Licencias', value: 5, color: 'bg-muted-foreground/40' },
               ]}
+            />
+          </div>
+        </div>
+
+        {/* Entrevistas Section */}
+        <div className="mt-24">
+          <div className="mb-12">
+            <h3 className="font-display text-2xl md:text-3xl font-semibold mb-4">
+              Entrevistas
+            </h3>
+            <p className="text-body text-lg max-w-2xl">
+              Insights principales extraídos de entrevistas en profundidad con usuarios.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <InsightCard 
+              number={1}
+              title="La confianza se construye a partir de experiencias previas verificables"
+              description="Las personas priorizan contratar profesionales recomendados o con buen historial, ya que desconfían de la búsqueda abierta en internet y de perfiles sin respaldo."
+              delay={0}
+            />
+            <InsightCard 
+              number={2}
+              title="La comunicación clara y centralizada define la percepción de la experiencia"
+              description="La falta de respuesta o la comunicación dispersa genera frustración incluso antes de que el servicio comience."
+              delay={150}
+            />
+            <InsightCard 
+              number={3}
+              title="El cumplimiento de tiempos y acuerdos es más importante que el precio"
+              description="Las demoras, los cambios no registrados o los trabajos inconclusos son una de las principales fuentes de insatisfacción."
+              delay={300}
             />
           </div>
         </div>

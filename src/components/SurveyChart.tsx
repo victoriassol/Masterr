@@ -1,24 +1,21 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
+interface BarData {
+  label: string;
+  value: number;
+  color: string;
+}
+
 interface SurveyChartProps {
   direction: 'left' | 'right';
   delay: number;
   title: string;
   description: string;
+  bars: BarData[];
 }
 
-const SurveyChart = ({ direction, delay, title, description }: SurveyChartProps) => {
+const SurveyChart = ({ direction, delay, title, description, bars }: SurveyChartProps) => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.3 });
-
-  // Generate random bar data for visual variety
-  const bars = [
-    { label: 'Muy satisfecho', value: 35, color: 'bg-accent' },
-    { label: 'Satisfecho', value: 42, color: 'bg-primary' },
-    { label: 'Neutral', value: 15, color: 'bg-muted-foreground/60' },
-    { label: 'Insatisfecho', value: 5, color: 'bg-muted-foreground/40' },
-    { label: 'Muy insatisfecho', value: 3, color: 'bg-muted-foreground/20' },
-  ];
-
   return (
     <div
       ref={ref}

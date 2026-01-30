@@ -30,7 +30,7 @@ const UserFlowSection = () => {
 
         <div
           ref={imageRef}
-          className="bg-surface-elevated rounded-2xl p-6 md:p-10 shadow-sm border border-border"
+          className="bg-surface-elevated rounded-2xl p-6 md:p-10 shadow-sm"
           style={{
             opacity: imageVisible ? 1 : 0,
             transform: imageVisible ? 'translateY(0)' : 'translateY(30px)',

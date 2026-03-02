@@ -1,57 +1,52 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { Check, X, Minus } from 'lucide-react';
+import tuttiImg from '@/assets/benchmark-tutti.png';
+import mannoImg from '@/assets/benchmark-manno.jpg';
+import justlifeImg from '@/assets/benchmark-justlife.png';
 
-interface CompetitorCardProps {
+interface AnalysisPoint {
+  category: string;
+  text: string;
+}
+
+interface CompetitorData {
   name: string;
-  description: string;
-  features: {
-    name: string;
-    status: 'yes' | 'no' | 'partial';
-  }[];
+  image: string;
+  analysis: AnalysisPoint[];
   delay: number;
 }
 
-const CompetitorCard = ({ name, description, features, delay }: CompetitorCardProps) => {
-  const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
-
-  const getStatusIcon = (status: 'yes' | 'no' | 'partial') => {
-    switch (status) {
-      case 'yes':
-        return <Check className="w-5 h-5 text-accent" />;
-      case 'no':
-        return <X className="w-5 h-5 text-destructive" />;
-      case 'partial':
-        return <Minus className="w-5 h-5 text-muted-foreground" />;
-    }
-  };
+const CompetitorColumn = ({ name, image, analysis, delay }: CompetitorData) => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.1 });
 
   return (
     <div
       ref={ref}
-      className="bg-card rounded-2xl p-6 md:p-8 shadow-sm border border-border flex flex-col"
+      className="flex flex-col"
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translateY(0)' : 'translateY(40px)',
         transition: `all 0.8s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms`
       }}
     >
-      <div className="mb-6">
-        <h4 className="font-display text-xl md:text-2xl font-semibold mb-2">
-          {name}
-        </h4>
-        <p className="text-body text-sm leading-relaxed">
-          {description}
-        </p>
+      <div className="bg-muted rounded-2xl p-4 mb-6 flex justify-center">
+        <img
+          src={image}
+          alt={`${name} app screenshot`}
+          className="w-full max-w-[240px] rounded-xl object-contain"
+        />
       </div>
 
-      <div className="space-y-3 flex-1">
-        {features.map((feature, index) => (
-          <div 
-            key={index}
-            className="flex items-center justify-between py-2 border-b border-border/50 last:border-0"
-          >
-            <span className="text-sm text-foreground">{feature.name}</span>
-            {getStatusIcon(feature.status)}
+      <h4 className="font-display text-xl md:text-2xl font-semibold mb-4">{name}</h4>
+
+      <div className="space-y-4">
+        {analysis.map((point, index) => (
+          <div key={index}>
+            <span className="text-accent font-semibold text-sm uppercase tracking-wide">
+              {point.category}
+            </span>
+            <p className="text-body text-sm leading-relaxed mt-1">
+              {point.text}
+            </p>
           </div>
         ))}
       </div>
@@ -62,41 +57,59 @@ const CompetitorCard = ({ name, description, features, delay }: CompetitorCardPr
 const BenchmarkSection = () => {
   const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
 
-  const competitors = [
+  const competitors: Omit<CompetitorData, 'delay'>[] = [
     {
       name: 'Tutti',
-      description: 'Marketplace general de clasificados con sección de servicios para el hogar.',
-      features: [
-        { name: 'Reseñas verificadas', status: 'no' as const },
-        { name: 'Chat integrado', status: 'yes' as const },
-        { name: 'Perfiles de profesionales', status: 'partial' as const },
-        { name: 'Seguimiento del servicio', status: 'no' as const },
-        { name: 'Sistema de pagos', status: 'no' as const },
-        { name: 'Verificación de identidad', status: 'no' as const },
+      image: tuttiImg,
+      analysis: [
+        {
+          category: 'Visual',
+          text: 'Buena legibilidad general, pero con mala distribución del espacio y problemas de contraste entre fondo y texto que afectan la jerarquía visual.',
+        },
+        {
+          category: 'Interacción',
+          text: 'Registro y solicitud de servicio extensos (muchos pasos), lo que hace el recorrido más largo y menos eficiente frente a la competencia.',
+        },
+        {
+          category: 'Vocabulario',
+          text: 'Directo e intuitivo, con categorías claras; sin embargo, repeticiones en estados vacíos generan pequeños conflictos de comprensión.',
+        },
       ],
     },
     {
       name: 'Manno',
-      description: 'Plataforma especializada en servicios para el hogar con presencia regional.',
-      features: [
-        { name: 'Reseñas verificadas', status: 'yes' as const },
-        { name: 'Chat integrado', status: 'yes' as const },
-        { name: 'Perfiles de profesionales', status: 'yes' as const },
-        { name: 'Seguimiento del servicio', status: 'partial' as const },
-        { name: 'Sistema de pagos', status: 'partial' as const },
-        { name: 'Verificación de identidad', status: 'partial' as const },
+      image: mannoImg,
+      analysis: [
+        {
+          category: 'Visual',
+          text: 'Diseño equilibrado, coherente entre pantallas, buen uso del espacio y contraste adecuado; presenta leves desalineaciones puntuales.',
+        },
+        {
+          category: 'Interacción',
+          text: 'Flujo ágil y optimizado, con pocos pasos en log in, registro y solicitud, lo que mejora la eficiencia del recorrido.',
+        },
+        {
+          category: 'Vocabulario',
+          text: 'Claro y consistente con la acción del usuario, aunque existe un error puntual en etiquetas como "presupuestar" que no cumplen exactamente su función.',
+        },
       ],
     },
     {
       name: 'JustLife',
-      description: 'App de servicios de limpieza y mantenimiento con modelo de suscripción.',
-      features: [
-        { name: 'Reseñas verificadas', status: 'yes' as const },
-        { name: 'Chat integrado', status: 'yes' as const },
-        { name: 'Perfiles de profesionales', status: 'partial' as const },
-        { name: 'Seguimiento del servicio', status: 'yes' as const },
-        { name: 'Sistema de pagos', status: 'yes' as const },
-        { name: 'Verificación de identidad', status: 'yes' as const },
+      image: justlifeImg,
+      analysis: [
+        {
+          category: 'Visual',
+          text: 'Interfaz visualmente cargada, con exceso de información y mezcla de formatos (íconos, imágenes, reels) que generan ruido y sensación de sobreestimulación.',
+        },
+        {
+          category: 'Interacción',
+          text: 'Log in y registro simples, pero proceso de solicitud de servicio más extenso y con múltiples decisiones en cada etapa.',
+        },
+        {
+          category: 'Vocabulario',
+          text: 'Directo y comprensible, aunque la cantidad de información y opciones simultáneas puede resultar abrumadora.',
+        },
       ],
     },
   ];
@@ -104,10 +117,10 @@ const BenchmarkSection = () => {
   return (
     <section className="py-24 px-6 md:px-12 lg:px-24 bg-background">
       <div className="max-w-6xl mx-auto">
-        <div 
+        <div
           ref={titleRef}
           className={`mb-16 ${titleVisible ? 'opacity-100' : 'opacity-0'}`}
-          style={{ 
+          style={{
             transform: titleVisible ? 'translateY(0)' : 'translateY(40px)',
             transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)'
           }}
@@ -119,18 +132,16 @@ const BenchmarkSection = () => {
             Benchmarking
           </h2>
           <p className="text-body text-lg max-w-3xl leading-relaxed">
-            Analizamos las principales plataformas del mercado para identificar 
+            Analizamos las principales plataformas del mercado para identificar
             oportunidades de diferenciación y mejores prácticas.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
           {competitors.map((competitor, index) => (
-            <CompetitorCard
+            <CompetitorColumn
               key={competitor.name}
-              name={competitor.name}
-              description={competitor.description}
-              features={competitor.features}
+              {...competitor}
               delay={index * 150}
             />
           ))}

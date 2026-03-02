@@ -8,10 +8,11 @@ interface PhoneMockupProps {
   image: string;
   number: number;
   description: string;
+  details: string[];
   delay: number;
 }
 
-const PhoneMockup = ({ image, number, description, delay }: PhoneMockupProps) => {
+const PhoneMockup = ({ image, number, description, details, delay }: PhoneMockupProps) => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
 
   return (
@@ -26,9 +27,7 @@ const PhoneMockup = ({ image, number, description, delay }: PhoneMockupProps) =>
     >
       {/* Phone Frame */}
       <div className="relative">
-        {/* Phone bezel */}
         <div className="relative bg-[#1a1a1a] rounded-[2.5rem] p-2 shadow-2xl">
-          {/* Screen */}
           <div className="relative bg-white rounded-[2rem] overflow-hidden w-[180px] h-[390px] md:w-[200px] md:h-[433px] lg:w-[220px] lg:h-[476px]">
             <img 
               src={image} 
@@ -36,7 +35,6 @@ const PhoneMockup = ({ image, number, description, delay }: PhoneMockupProps) =>
               className="w-full h-full object-cover object-top"
             />
           </div>
-          {/* Notch */}
           <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-5 bg-[#1a1a1a] rounded-full" />
         </div>
       </div>
@@ -47,9 +45,19 @@ const PhoneMockup = ({ image, number, description, delay }: PhoneMockupProps) =>
       </div>
 
       {/* Description */}
-      <p className="mt-4 text-center text-body text-sm md:text-base max-w-[200px] leading-relaxed">
+      <h3 className="mt-4 text-center font-display font-semibold text-base md:text-lg max-w-[240px]">
         {description}
-      </p>
+      </h3>
+
+      {/* Problem-solving details */}
+      <ul className="mt-3 space-y-2 max-w-[240px]">
+        {details.map((detail, i) => (
+          <li key={i} className="text-body text-xs md:text-sm leading-relaxed flex gap-2">
+            <span className="text-accent mt-0.5 shrink-0">•</span>
+            <span>{detail}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
@@ -61,22 +69,38 @@ const ProductShowcase = () => {
     {
       image: listaPrestadores,
       number: 1,
-      description: 'Buscá prestadores del servicio que necesites',
+      description: 'Búsqueda centralizada por categoría',
+      details: [
+        'Resuelve la dispersión de canales de búsqueda concentrando la oferta en un solo lugar.',
+        'Indicadores visuales de contactos previos para retomar conversaciones sin fricciones.',
+      ],
     },
     {
       image: perfilCarlos,
       number: 2,
-      description: 'Revisá su perfil y reseñas',
+      description: 'Perfil con referencias verificables',
+      details: [
+        'Reseñas de la comunidad que reemplazan la dependencia del boca a boca informal.',
+        'Zona de trabajo y tarifa promedio visibles para decisiones informadas desde el inicio.',
+      ],
     },
     {
       image: chatPrestador,
       number: 3,
-      description: 'Pactá condiciones y comenzá el servicio',
+      description: 'Comunicación directa y acuerdos claros',
+      details: [
+        'Canal de mensajería integrado que elimina la dispersión entre plataformas.',
+        'Condiciones pactadas antes del inicio para evitar malentendidos y desacuerdos.',
+      ],
     },
     {
       image: detalle,
       number: 4,
-      description: 'Accedé al detalle del servicio y finalizá dejando tu reseña',
+      description: 'Registro detallado del servicio',
+      details: [
+        'Desglose transparente de precios que reduce la percepción de cobros arbitrarios.',
+        'Historial completo del trabajo realizado como respaldo para ambas partes.',
+      ],
     },
   ];
 
@@ -109,6 +133,7 @@ const ProductShowcase = () => {
               image={screen.image}
               number={screen.number}
               description={screen.description}
+              details={screen.details}
               delay={index * 150}
             />
           ))}

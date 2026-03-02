@@ -69,7 +69,7 @@ const ProductShowcase = () => {
     {
       image: listaPrestadores,
       number: 1,
-      description: 'Búsqueda centralizada por categoría',
+      description: 'Buscá prestadores del servicio que necesites',
       details: [
         'Resuelve la dispersión de canales de búsqueda concentrando la oferta en un solo lugar.',
         'Indicadores visuales de contactos previos para retomar conversaciones sin fricciones.',
@@ -78,7 +78,7 @@ const ProductShowcase = () => {
     {
       image: perfilCarlos,
       number: 2,
-      description: 'Perfil con referencias verificables',
+      description: 'Revisá su perfil y reseñas',
       details: [
         'Reseñas de la comunidad que reemplazan la dependencia del boca a boca informal.',
         'Zona de trabajo y tarifa promedio visibles para decisiones informadas desde el inicio.',
@@ -87,16 +87,16 @@ const ProductShowcase = () => {
     {
       image: chatPrestador,
       number: 3,
-      description: 'Comunicación directa y acuerdos claros',
+      description: 'Pactá condiciones y comenzá el servicio',
       details: [
-        'Canal de mensajería integrado que elimina la dispersión entre plataformas.',
+        'Canal de mensajería integrado con el prestador.',
         'Condiciones pactadas antes del inicio para evitar malentendidos y desacuerdos.',
       ],
     },
     {
       image: detalle,
       number: 4,
-      description: 'Registro detallado del servicio',
+      description: 'Accedé al detalle del servicio y finalizá dejando tu reseña',
       details: [
         'Desglose transparente de precios que reduce la percepción de cobros arbitrarios.',
         'Historial completo del trabajo realizado como respaldo para ambas partes.',

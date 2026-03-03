@@ -57,7 +57,7 @@ const AboutSection = () => {
                 { img: juanaImg, name: 'Juana Fuertes' },
               ].map((member) => (
                 <div key={member.name} className="flex flex-col items-center gap-2 text-center">
-                  <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-border shadow-md">
+                  <div className="w-40 h-40 overflow-hidden">
                     <img src={member.img} alt={member.name} className="w-full h-full object-cover" />
                   </div>
                   <span className="text-xs font-medium text-body">{member.name}</span>

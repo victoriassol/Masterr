@@ -37,9 +37,9 @@ const AboutSection = () => {
         {/* Right: Team, Context, Tools */}
         <div className={`flex flex-col items-center gap-6 ${isVisible ? 'opacity-100 animate-slide-in-right' : 'opacity-0'}`}>
           {/* Photos row */}
-          <div className="flex items-end justify-center gap-2">
+          <div className="flex items-end justify-center">
             {/* Lisandro */}
-            <div className="-rotate-3 hover:rotate-0 transition-transform duration-500">
+            <div className="-rotate-3 hover:rotate-0 transition-transform duration-500 -mr-3">
               <div className="w-[170px]">
                 <img src={lisandroImg} alt="Lisandro Perrone" className="w-full h-auto" />
               </div>
@@ -53,7 +53,7 @@ const AboutSection = () => {
               <p className="text-xs text-muted-foreground text-center mt-1.5 font-medium">Victoria</p>
             </div>
             {/* Juana */}
-            <div className="rotate-3 hover:rotate-0 transition-transform duration-500">
+            <div className="rotate-3 hover:rotate-0 transition-transform duration-500 -ml-3">
               <div className="w-[170px]">
                 <img src={juanaImg} alt="Juana Fuertes" className="w-full h-auto" />
               </div>

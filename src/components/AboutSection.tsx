@@ -46,7 +46,7 @@ const AboutSection = () => {
               <p className="text-xs text-muted-foreground text-center mt-1.5 font-medium">Lisandro</p>
             </div>
             {/* Victoria - raised */}
-            <div className="rotate-1 hover:rotate-0 transition-transform duration-500 -mb-16">
+            <div className="rotate-1 hover:rotate-0 transition-transform duration-500 -translate-y-12">
               <div className="w-[170px]">
                 <img src={victoriaImg} alt="Victoria Ecalle" className="w-full h-auto" />
               </div>

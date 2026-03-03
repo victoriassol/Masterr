@@ -38,22 +38,22 @@ const AboutSection = () => {
         <div className={`relative ${isVisible ? 'opacity-100 animate-slide-in-right' : 'opacity-0'}`}>
           {/* Photos scattered */}
           <div className="relative h-[320px] mb-6">
-            {/* Victoria - top left, tilted */}
-            <div className="absolute top-0 left-0 -rotate-3 hover:rotate-0 transition-transform duration-500 z-10">
+            {/* Victoria - bottom left, tilted */}
+            <div className="absolute bottom-0 left-0 -rotate-3 hover:rotate-0 transition-transform duration-500 z-10">
               <div className="w-[170px] shadow-xl">
                 <img src={victoriaImg} alt="Victoria Ecalle" className="w-full h-auto" />
               </div>
               <p className="text-xs text-muted-foreground text-center mt-1 font-medium">Victoria</p>
             </div>
-            {/* Lisandro - top right, tilted other way */}
-            <div className="absolute top-2 right-4 rotate-3 hover:rotate-0 transition-transform duration-500 z-20">
+            {/* Lisandro - top center */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 rotate-1 hover:rotate-0 transition-transform duration-500 z-30">
               <div className="w-[170px] shadow-xl">
                 <img src={lisandroImg} alt="Lisandro Perrone" className="w-full h-auto" />
               </div>
               <p className="text-xs text-muted-foreground text-center mt-1 font-medium">Lisandro</p>
             </div>
-            {/* Juana - bottom center, slight tilt */}
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 rotate-1 hover:rotate-0 transition-transform duration-500 z-30">
+            {/* Juana - bottom right, tilted other way */}
+            <div className="absolute bottom-0 right-4 rotate-3 hover:rotate-0 transition-transform duration-500 z-20">
               <div className="w-[170px] shadow-xl">
                 <img src={juanaImg} alt="Juana Fuertes" className="w-full h-auto" />
               </div>

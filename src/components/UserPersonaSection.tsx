@@ -1,5 +1,5 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { User } from 'lucide-react';
+import florenciaImg from '@/assets/team/florencia-persona.png';
 
 const UserPersonaSection = () => {
   const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
@@ -41,7 +41,7 @@ const UserPersonaSection = () => {
             {/* Left Column - Photo and Quote */}
             <div className="bg-accent/10 p-8 flex flex-col">
               <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl bg-muted flex items-center justify-center mb-6 overflow-hidden">
-                <User className="w-16 h-16 text-muted-foreground" />
+                <img src={florenciaImg} alt="Florencia - User Persona" className="w-full h-full object-cover" />
               </div>
               
               <blockquote className="text-lg md:text-xl font-medium italic text-foreground mb-8 leading-relaxed">

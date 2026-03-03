@@ -6,7 +6,7 @@ const Hero = () => {
     <section className="min-h-[90vh] flex items-center px-6 md:px-12 lg:px-24 py-20">
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
         {/* Left: Content */}
-        <div className="flex flex-col items-center md:items-start text-center md:text-left">
+        <div className="flex flex-col items-center text-center">
           <img 
             src={logo} 
             alt="Masterr" 
@@ -23,7 +23,7 @@ const Hero = () => {
 
         {/* Right: Phone Mockup */}
         <div className="flex justify-center opacity-0 animate-fade-up animation-delay-200">
-          <div className="relative w-[280px] md:w-[300px] lg:w-[320px]">
+          <div className="relative w-[250px] md:w-[270px] lg:w-[288px]">
             <div className="rounded-[2.5rem] overflow-hidden border-[8px] border-foreground/10 shadow-2xl bg-background">
               <img 
                 src={homeScreen} 

@@ -40,21 +40,21 @@ const AboutSection = () => {
           <div className="flex items-end justify-center gap-4">
             {/* Lisandro */}
             <div className="-rotate-3 hover:rotate-0 transition-transform duration-500">
-              <div className="w-[140px] shadow-xl">
+              <div className="w-[170px]">
                 <img src={lisandroImg} alt="Lisandro Perrone" className="w-full h-auto" />
               </div>
               <p className="text-xs text-muted-foreground text-center mt-1.5 font-medium">Lisandro</p>
             </div>
-            {/* Victoria - slightly raised */}
-            <div className="rotate-1 hover:rotate-0 transition-transform duration-500 -mb-4">
-              <div className="w-[140px] shadow-xl">
+            {/* Victoria - raised */}
+            <div className="rotate-1 hover:rotate-0 transition-transform duration-500 -mb-8">
+              <div className="w-[170px]">
                 <img src={victoriaImg} alt="Victoria Ecalle" className="w-full h-auto" />
               </div>
               <p className="text-xs text-muted-foreground text-center mt-1.5 font-medium">Victoria</p>
             </div>
             {/* Juana */}
             <div className="rotate-3 hover:rotate-0 transition-transform duration-500">
-              <div className="w-[140px] shadow-xl">
+              <div className="w-[170px]">
                 <img src={juanaImg} alt="Juana Fuertes" className="w-full h-auto" />
               </div>
               <p className="text-xs text-muted-foreground text-center mt-1.5 font-medium">Juana</p>

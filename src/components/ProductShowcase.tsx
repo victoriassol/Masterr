@@ -10,15 +10,16 @@ interface PhoneMockupProps {
   description: string;
   details: string[];
   delay: number;
+  reverse?: boolean;
 }
 
-const PhoneMockup = ({ image, number, description, details, delay }: PhoneMockupProps) => {
+const PhoneMockup = ({ image, number, description, details, delay, reverse }: PhoneMockupProps) => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
 
   return (
     <div
       ref={ref}
-      className="flex flex-col items-center"
+      className={`flex flex-col md:flex-row items-center gap-8 md:gap-12 ${reverse ? 'md:flex-row-reverse' : ''}`}
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? 'translateY(0)' : 'translateY(60px)',
@@ -26,9 +27,9 @@ const PhoneMockup = ({ image, number, description, details, delay }: PhoneMockup
       }}
     >
       {/* Phone Frame */}
-      <div className="relative">
+      <div className="shrink-0">
         <div className="relative bg-[#1a1a1a] rounded-[2.5rem] p-2 shadow-2xl">
-          <div className="relative bg-white rounded-[2rem] overflow-hidden w-[180px] h-[390px] md:w-[200px] md:h-[433px] lg:w-[220px] lg:h-[476px]">
+          <div className="relative bg-white rounded-[2rem] overflow-hidden w-[200px] h-[433px]">
             <img 
               src={image} 
               alt={description}
@@ -39,25 +40,23 @@ const PhoneMockup = ({ image, number, description, details, delay }: PhoneMockup
         </div>
       </div>
 
-      {/* Number circle */}
-      <div className="mt-8 w-12 h-12 rounded-full bg-accent flex items-center justify-center">
-        <span className="text-accent-foreground font-display text-xl font-bold">{number}</span>
+      {/* Content */}
+      <div className={`flex flex-col ${reverse ? 'md:items-end md:text-right' : 'md:items-start md:text-left'} items-center text-center max-w-md`}>
+        <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mb-4">
+          <span className="text-accent-foreground font-display text-xl font-bold">{number}</span>
+        </div>
+        <h3 className="font-display font-semibold text-xl md:text-2xl mb-4">
+          {description}
+        </h3>
+        <ul className="space-y-3">
+          {details.map((detail, i) => (
+            <li key={i} className={`text-body text-sm md:text-base leading-relaxed flex gap-3 ${reverse ? 'md:flex-row-reverse' : ''}`}>
+              <span className="text-accent mt-0.5 shrink-0">•</span>
+              <span>{detail}</span>
+            </li>
+          ))}
+        </ul>
       </div>
-
-      {/* Description */}
-      <h3 className="mt-4 text-center font-display font-semibold text-base md:text-lg max-w-[240px]">
-        {description}
-      </h3>
-
-      {/* Problem-solving details */}
-      <ul className="mt-3 space-y-2 max-w-[240px]">
-        {details.map((detail, i) => (
-          <li key={i} className="text-body text-xs md:text-sm leading-relaxed flex gap-2">
-            <span className="text-accent mt-0.5 shrink-0">•</span>
-            <span>{detail}</span>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 };

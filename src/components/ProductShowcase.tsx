@@ -27,21 +27,21 @@ const PhoneMockup = ({ image, number, description, details, delay, reverse }: Ph
       }}
     >
       {/* Phone Frame */}
-      <div className="shrink-0">
-        <div className="relative bg-[#1a1a1a] rounded-[2.5rem] p-2 shadow-2xl">
-          <div className="relative bg-white rounded-[2rem] overflow-hidden w-[200px] h-[433px]">
+      <div className="w-full md:w-1/2 flex justify-center">
+        <div className="relative bg-[#1a1a1a] rounded-[2.5rem] p-3 shadow-2xl">
+          <div className="relative bg-white rounded-[2rem] overflow-hidden w-[280px] h-[607px]">
             <img 
               src={image} 
               alt={description}
               className="w-full h-full object-cover object-top"
             />
           </div>
-          <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-5 bg-[#1a1a1a] rounded-full" />
+          <div className="absolute top-5 left-1/2 -translate-x-1/2 w-20 h-6 bg-[#1a1a1a] rounded-full" />
         </div>
       </div>
 
       {/* Content */}
-      <div className={`flex flex-col ${reverse ? 'md:items-end md:text-right' : 'md:items-start md:text-left'} items-center text-center max-w-md`}>
+      <div className={`w-full md:w-1/2 flex flex-col ${reverse ? 'md:items-end md:text-right' : 'md:items-start md:text-left'} items-center text-center`}>
         <div className="w-12 h-12 rounded-full bg-accent flex items-center justify-center mb-4">
           <span className="text-accent-foreground font-display text-xl font-bold">{number}</span>
         </div>

@@ -108,7 +108,7 @@ const ProductShowcase = () => {
       description: 'Revisá su perfil y reseñas',
       details: [
         { pain: 'Dependencia del boca a boca', solution: 'Reseñas verificadas de la comunidad' },
-        { pain: 'Percepción de costos arbitrarios', solution: 'Tarifa promedio visible para decisiones informadas' },
+        { pain: 'Desconocimiento sobre el costo esperado', solution: 'Tarifa promedio visible para decisiones informadas' },
       ],
     },
     {

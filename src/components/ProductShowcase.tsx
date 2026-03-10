@@ -21,7 +21,7 @@ interface PhoneMockupProps {
 
 const PainSolutionCard = ({ pain, solution, isVisible, delay }: { pain: string; solution: string; isVisible: boolean; delay: number }) => (
   <div 
-    className="flex flex-col items-center gap-2 w-full"
+    className="flex flex-col items-center w-full relative"
     style={{
       opacity: isVisible ? 1 : 0,
       transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
@@ -29,19 +29,19 @@ const PainSolutionCard = ({ pain, solution, isVisible, delay }: { pain: string; 
     }}
   >
     {/* Pain */}
-    <div className="w-full rounded-xl bg-destructive/15 px-5 py-3.5 text-center">
+    <div className="w-full rounded-xl bg-destructive/15 px-5 py-3.5 text-center relative z-10">
       <span className="text-sm md:text-base font-medium text-destructive">{pain}</span>
     </div>
     
-    {/* Chevrons */}
-    <div className="flex flex-col items-center -my-1">
+    {/* Chevrons - overlapping both cards */}
+    <div className="flex flex-col items-center -my-3 relative z-0">
       <ChevronDown className="w-5 h-5 text-accent opacity-80" style={{ animation: isVisible ? 'bounce-chevron 1.5s ease-in-out infinite' : 'none' }} />
-      <ChevronDown className="w-5 h-5 text-accent opacity-60 -mt-2" style={{ animation: isVisible ? 'bounce-chevron 1.5s ease-in-out 0.15s infinite' : 'none' }} />
-      <ChevronDown className="w-5 h-5 text-accent opacity-40 -mt-2" style={{ animation: isVisible ? 'bounce-chevron 1.5s ease-in-out 0.3s infinite' : 'none' }} />
+      <ChevronDown className="w-5 h-5 text-accent opacity-60 -mt-2.5" style={{ animation: isVisible ? 'bounce-chevron 1.5s ease-in-out 0.15s infinite' : 'none' }} />
+      <ChevronDown className="w-5 h-5 text-accent opacity-40 -mt-2.5" style={{ animation: isVisible ? 'bounce-chevron 1.5s ease-in-out 0.3s infinite' : 'none' }} />
     </div>
 
     {/* Solution */}
-    <div className="w-full rounded-xl bg-emerald-100 px-5 py-3.5 text-center">
+    <div className="w-full rounded-xl bg-emerald-100 px-5 py-3.5 text-center relative z-10">
       <span className="text-sm md:text-base font-medium text-emerald-700">{solution}</span>
     </div>
   </div>

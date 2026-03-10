@@ -97,3 +97,87 @@ const PhoneMockup = ({ image, number, description, details, delay, reverse }: Ph
     </div>
   );
 };
+
+const ProductShowcase = () => {
+  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
+
+  const screens = [
+    {
+      image: listaPrestadores,
+      number: 1,
+      description: 'Buscá prestadores del servicio que necesites',
+      details: [
+        { pain: 'Dispersión de canales de búsqueda', solution: 'Toda la oferta en un solo lugar' },
+        { pain: 'Sin registro de contactos previos', solution: 'Indicadores de conversaciones anteriores' },
+      ],
+    },
+    {
+      image: perfilCarlos,
+      number: 2,
+      description: 'Revisá su perfil y reseñas',
+      details: [
+        { pain: 'Dependencia del boca a boca', solution: 'Reseñas verificadas de la comunidad' },
+        { pain: 'Falta de información inicial', solution: 'Zona de trabajo y tarifa visibles' },
+      ],
+    },
+    {
+      image: chatPrestador,
+      number: 3,
+      description: 'Pactá condiciones y comenzá el servicio',
+      details: [
+        { pain: 'Comunicación fragmentada', solution: 'Mensajería integrada con el prestador' },
+        { pain: 'Malentendidos y desacuerdos', solution: 'Condiciones pactadas antes del inicio' },
+      ],
+    },
+    {
+      image: detalle,
+      number: 4,
+      description: 'Accedé al detalle del servicio y finalizá dejando tu reseña',
+      details: [
+        { pain: 'Percepción de costos arbitrarios', solution: 'Desglose transparente de precios' },
+        { pain: 'Sin respaldo del trabajo realizado', solution: 'Historial completo como respaldo' },
+      ],
+    },
+  ];
+
+  return (
+    <section className="py-24 px-6 md:px-12 lg:px-24 bg-background">
+      <div className="max-w-7xl mx-auto">
+        <div 
+          ref={titleRef}
+          className={`text-center mb-16 ${titleVisible ? 'opacity-100' : 'opacity-0'}`}
+          style={{ 
+            transform: titleVisible ? 'translateY(0)' : 'translateY(40px)',
+            transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)'
+          }}
+        >
+          <span className="text-accent font-medium tracking-wide uppercase text-sm">
+            Producto
+          </span>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold mt-3 mb-6">
+            Flujo principal de la app
+          </h2>
+          <p className="text-body text-lg max-w-2xl mx-auto leading-relaxed">
+            Un recorrido simple y transparente desde la búsqueda hasta la reseña final.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-16 md:gap-20">
+          {screens.map((screen, index) => (
+            <PhoneMockup
+              key={index}
+              image={screen.image}
+              number={screen.number}
+              description={screen.description}
+              details={screen.details}
+              delay={index * 150}
+              reverse={index % 2 === 1}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ProductShowcase;

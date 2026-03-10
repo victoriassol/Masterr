@@ -179,3 +179,8 @@
 .animation-delay-400 {
   animation-delay: 0.4s;
 }
+
+@keyframes bounce-chevron {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(4px); opacity: 1; }
+}

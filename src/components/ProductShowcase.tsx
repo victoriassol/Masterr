@@ -108,7 +108,6 @@ const ProductShowcase = () => {
       description: 'Buscá prestadores del servicio que necesites',
       details: [
         { pain: 'Dispersión de canales de búsqueda', solution: 'Toda la oferta en un solo lugar' },
-        { pain: 'Sin registro de contactos previos', solution: 'Indicadores de conversaciones anteriores' },
       ],
     },
     {
@@ -117,7 +116,6 @@ const ProductShowcase = () => {
       description: 'Revisá su perfil y reseñas',
       details: [
         { pain: 'Dependencia del boca a boca', solution: 'Reseñas verificadas de la comunidad' },
-        { pain: 'Falta de información inicial', solution: 'Zona de trabajo y tarifa visibles' },
       ],
     },
     {
@@ -126,7 +124,6 @@ const ProductShowcase = () => {
       description: 'Pactá condiciones y comenzá el servicio',
       details: [
         { pain: 'Comunicación fragmentada', solution: 'Mensajería integrada con el prestador' },
-        { pain: 'Malentendidos y desacuerdos', solution: 'Condiciones pactadas antes del inicio' },
       ],
     },
     {
@@ -134,8 +131,7 @@ const ProductShowcase = () => {
       number: 4,
       description: 'Accedé al detalle del servicio y finalizá dejando tu reseña',
       details: [
-        { pain: 'Percepción de costos arbitrarios', solution: 'Desglose transparente de precios' },
-        { pain: 'Sin respaldo del trabajo realizado', solution: 'Historial completo como respaldo' },
+        { pain: 'Percepción de costos arbitrarios', solution: 'Historial con desglose de tarifas' },
       ],
     },
   ];

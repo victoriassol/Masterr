@@ -124,7 +124,7 @@ const ProductShowcase = () => {
       number: 4,
       description: 'Accedé al detalle del servicio y finalizá dejando tu reseña',
       details: [
-        { pain: 'Desconocimiento sobre el costo esperado', solution: 'Historial con desglose de tarifas' },
+        { pain: 'Percepción de costos arbitrarios', solution: 'Historial con desglose de tarifas' },
       ],
     },
   ];

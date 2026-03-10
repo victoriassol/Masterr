@@ -34,10 +34,10 @@ const PainSolutionCard = ({ pain, solution, isVisible, delay }: { pain: string; 
     </div>
     
     {/* Chevrons - overlapping both cards */}
-    <div className="flex flex-col items-center -my-1.5 relative z-20" style={{ marginTop: '-11px' }}>
-      <ChevronDown className="w-5 h-5 text-accent opacity-80" style={{ animation: isVisible ? 'bounce-chevron 1.5s ease-in-out infinite' : 'none' }} />
-      <ChevronDown className="w-5 h-5 text-accent opacity-60 -mt-2.5" style={{ animation: isVisible ? 'bounce-chevron 1.5s ease-in-out 0.15s infinite' : 'none' }} />
-      <ChevronDown className="w-5 h-5 text-accent opacity-40 -mt-2.5" style={{ animation: isVisible ? 'bounce-chevron 1.5s ease-in-out 0.3s infinite' : 'none' }} />
+    <div className="flex flex-col items-center -my-3 relative z-20">
+      <ChevronDown className="w-7 h-7 text-accent opacity-80" style={{ animation: isVisible ? 'bounce-chevron 1.5s ease-in-out infinite' : 'none' }} />
+      <ChevronDown className="w-7 h-7 text-accent opacity-60 -mt-3" style={{ animation: isVisible ? 'bounce-chevron 1.5s ease-in-out 0.15s infinite' : 'none' }} />
+      <ChevronDown className="w-7 h-7 text-accent opacity-40 -mt-3" style={{ animation: isVisible ? 'bounce-chevron 1.5s ease-in-out 0.3s infinite' : 'none' }} />
     </div>
 
     {/* Solution */}

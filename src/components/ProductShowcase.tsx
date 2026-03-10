@@ -117,6 +117,7 @@ const ProductShowcase = () => {
       description: 'Pactá condiciones y comenzá el servicio',
       details: [
         { pain: 'Comunicación fragmentada', solution: 'Mensajería integrada con el prestador' },
+        { pain: 'Expectativas no alineadas entre cliente y profesional', solution: 'Condiciones del servicio acordadas antes de comenzar' },
       ],
     },
     {

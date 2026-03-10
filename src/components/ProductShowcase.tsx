@@ -1,5 +1,4 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
-import { ChevronDown } from 'lucide-react';
 import listaPrestadores from '@/assets/screens/lista-prestadores.png';
 import perfilCarlos from '@/assets/screens/perfil-carlos.png';
 import chatPrestador from '@/assets/screens/chat-prestador.png';

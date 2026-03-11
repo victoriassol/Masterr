@@ -5,6 +5,7 @@ import ResearchSection from '@/components/ResearchSection';
 import UserPersonaSection from '@/components/UserPersonaSection';
 import BenchmarkSection from '@/components/BenchmarkSection';
 import UserFlowSection from '@/components/UserFlowSection';
+import MoodboardSection from '@/components/MoodboardSection';
 import ProductShowcase from '@/components/ProductShowcase';
 
 const Index = () => {

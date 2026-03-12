@@ -39,7 +39,7 @@ const UserPersonaSection = () => {
         >
           <div className="grid md:grid-cols-3 gap-0">
             {/* Left Column - Photo and Quote */}
-            <div className="bg-accent/10 p-8 flex flex-col">
+            <div className="p-8 flex flex-col" style={{ backgroundColor: 'hsl(81 40% 90%)' }}>
               <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl bg-muted flex items-center justify-center mb-6 overflow-hidden">
                 <img src={florenciaImg} alt="Florencia - User Persona" className="w-full h-full object-cover" />
               </div>

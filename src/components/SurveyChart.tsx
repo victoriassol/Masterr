@@ -39,10 +39,11 @@ const SurveyChart = ({ direction, delay, title, description, bars }: SurveyChart
             <div key={index} className="flex items-center gap-4">
               <span className="text-sm text-body w-32 shrink-0">{bar.label}</span>
               <div className="flex-1 h-8 bg-secondary rounded-lg overflow-hidden">
-              <div 
-                  className={`h-full ${bar.color} rounded-lg transition-all duration-1000 ease-out`}
+                <div 
+                  className="h-full rounded-lg transition-all duration-1000 ease-out"
                   style={{ 
                     width: `${bar.value}%`,
+                    backgroundColor: bar.color,
                     opacity: isVisible ? 1 : 0,
                     transitionDelay: `${delay + index * 100}ms`
                   }}

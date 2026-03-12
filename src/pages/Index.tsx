@@ -7,6 +7,7 @@ import BenchmarkSection from '@/components/BenchmarkSection';
 import UserFlowSection from '@/components/UserFlowSection';
 import MoodboardSection from '@/components/MoodboardSection';
 import ProductShowcase from '@/components/ProductShowcase';
+import UserTestingSection from '@/components/UserTestingSection';
 
 const Index = () => {
   return (
@@ -21,6 +22,7 @@ const Index = () => {
         <UserFlowSection />
         <MoodboardSection />
         <ProductShowcase />
+        <UserTestingSection />
       </main>
     </div>
   );

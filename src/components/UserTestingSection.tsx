@@ -2,10 +2,13 @@ import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 import chatBefore from '@/assets/screens/chat-before.png';
 import chatAfter from '@/assets/screens/chat-after.png';
 import describiBefore from '@/assets/screens/describi-before.png';
+import perfilCarlos from '@/assets/screens/perfil-carlos.png';
+import chatPrestador from '@/assets/screens/chat-prestador.png';
+import chatAfter2 from '@/assets/screens/chat-after-2.png';
 
 interface TestingCase {
   beforeImage: string;
-  afterImage?: string;
+  afterImage: string;
   problem: string;
   solution: string;
   quote: string;
@@ -36,7 +39,6 @@ const TestingCard = ({ testCase, index }: { testCase: TestingCase; index: number
         transition: `all 0.8s cubic-bezier(0.16, 1, 0.3, 1) ${index * 200}ms`,
       }}
     >
-      {/* Problem & Solution text */}
       <div className="p-8 md:p-10">
         <div className="flex items-start gap-4 mb-6">
           <div className="w-10 h-10 rounded-full bg-destructive/10 flex items-center justify-center shrink-0 mt-0.5">
@@ -58,7 +60,6 @@ const TestingCard = ({ testCase, index }: { testCase: TestingCase; index: number
           </div>
         </div>
 
-        {/* Quote */}
         <blockquote className="border-l-4 border-accent pl-5 py-2 bg-accent-soft/30 rounded-r-lg">
           <p className="text-body italic text-sm md:text-base leading-relaxed">
             "{testCase.quote}"
@@ -66,19 +67,14 @@ const TestingCard = ({ testCase, index }: { testCase: TestingCase; index: number
         </blockquote>
       </div>
 
-      {/* Phone comparisons */}
       <div className="bg-surface px-8 py-10 flex flex-wrap justify-center gap-8 md:gap-14">
         <PhoneFrame image={testCase.beforeImage} label="Antes" />
-        {testCase.afterImage && (
-          <>
-            <div className="hidden md:flex items-center text-muted-foreground">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
-              </svg>
-            </div>
-            <PhoneFrame image={testCase.afterImage} label="Después" />
-          </>
-        )}
+        <div className="hidden md:flex items-center text-muted-foreground">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+          </svg>
+        </div>
+        <PhoneFrame image={testCase.afterImage} label="Después" />
       </div>
     </div>
   );
@@ -97,9 +93,17 @@ const UserTestingSection = () => {
     },
     {
       beforeImage: describiBefore,
+      afterImage: perfilCarlos,
       problem: 'El mensaje de contacto inicial no debe ser el mismo para todos los prestadores',
       solution: 'Enviar un mensaje individual a cada prestador luego de evaluar su perfil',
       quote: 'Estoy metiendo a alguien a mi casa, me quiero tomar el tiempo de contactar a cada prestador de forma personalizada. No es algo automático',
+    },
+    {
+      beforeImage: chatPrestador,
+      afterImage: chatAfter2,
+      problem: 'El botón de "ver servicio en curso" es pasado por alto por los usuarios',
+      solution: 'Reemplazar el enlace pasivo por una alerta visual destacada con un botón de acción claro que guíe al usuario hacia el servicio en curso',
+      quote: 'Parece un alerta, no un botón',
     },
   ];
 

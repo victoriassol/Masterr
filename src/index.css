@@ -6,44 +6,47 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 222 47% 11%;
+    --background: 240 20% 97%;
+    --foreground: 238 60% 20%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 238 60% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 238 60% 20%;
 
-    --primary: 222 47% 11%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 238 60% 33%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 240 20% 94%;
+    --secondary-foreground: 238 60% 20%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
+    --muted: 240 15% 93%;
+    --muted-foreground: 238 20% 46%;
 
-    --accent: 12 76% 61%;
+    --accent: 355 96% 60%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 355 96% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 222 47% 11%;
+    --border: 240 15% 88%;
+    --input: 240 15% 88%;
+    --ring: 238 60% 33%;
 
     --radius: 0.75rem;
 
     /* Custom tokens */
-    --heading: 222 47% 11%;
-    --body: 215 16% 35%;
-    --surface: 210 20% 98%;
+    --heading: 238 60% 20%;
+    --body: 238 20% 35%;
+    --surface: 240 20% 97%;
     --surface-elevated: 0 0% 100%;
-    --accent-soft: 12 76% 95%;
-    --accent-hover: 12 76% 55%;
-    
+    --accent-soft: 355 96% 95%;
+    --accent-hover: 355 96% 52%;
+    --success: 152 76% 33%;
+    --highlight: 65 100% 65%;
+    --lime: 81 98% 62%;
+
     /* Fonts */
     --font-display: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;

@@ -6,7 +6,7 @@ const MoodboardSection = () => {
   const { ref: imgRef, isVisible: imgVisible } = useScrollAnimation({ threshold: 0.15 });
 
   return (
-    <section id="design" className="py-24 px-6 md:px-12 lg:px-24 bg-surface">
+    <section className="py-24 px-6 md:px-12 lg:px-24 bg-surface">
       <div className="max-w-5xl mx-auto">
         <div
           ref={titleRef}

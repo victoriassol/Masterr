@@ -6,7 +6,7 @@ const UserFlowSection = () => {
   const { ref: imageRef, isVisible: imageVisible } = useScrollAnimation({ threshold: 0.1 });
 
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-24 bg-surface">
+    <section id="design" className="py-24 px-6 md:px-12 lg:px-24 bg-surface">
       <div className="max-w-6xl mx-auto">
         <div
           ref={titleRef}

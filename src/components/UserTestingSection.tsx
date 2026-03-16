@@ -1,4 +1,5 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useLanguage } from '@/contexts/LanguageContext';
 import chatBefore from '@/assets/screens/chat-before.png';
 import chatAfter from '@/assets/screens/chat-after.png';
 import describiBefore from '@/assets/screens/describi-before.png';
@@ -26,7 +27,7 @@ const PhoneFrame = ({ image, label }: { image: string; label: string }) => (
   </div>
 );
 
-const TestingCard = ({ testCase, index }: { testCase: TestingCase; index: number }) => {
+const TestingCard = ({ testCase, index, problemLabel, solutionLabel, beforeLabel, afterLabel }: { testCase: TestingCase; index: number; problemLabel: string; solutionLabel: string; beforeLabel: string; afterLabel: string }) => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.15 });
 
   return (
@@ -45,7 +46,7 @@ const TestingCard = ({ testCase, index }: { testCase: TestingCase; index: number
             <span className="text-destructive font-bold text-lg">✗</span>
           </div>
           <div>
-            <h4 className="font-display text-lg font-semibold mb-1">Problema</h4>
+            <h4 className="font-display text-lg font-semibold mb-1">{problemLabel}</h4>
             <p className="text-body leading-relaxed">{testCase.problem}</p>
           </div>
         </div>
@@ -55,7 +56,7 @@ const TestingCard = ({ testCase, index }: { testCase: TestingCase; index: number
             <span className="text-emerald-700 font-bold text-lg">✓</span>
           </div>
           <div>
-            <h4 className="font-display text-lg font-semibold mb-1">Solución</h4>
+            <h4 className="font-display text-lg font-semibold mb-1">{solutionLabel}</h4>
             <p className="text-body leading-relaxed">{testCase.solution}</p>
           </div>
         </div>
@@ -68,13 +69,13 @@ const TestingCard = ({ testCase, index }: { testCase: TestingCase; index: number
       </div>
 
       <div className="bg-surface px-8 py-10 flex flex-wrap justify-center gap-8 md:gap-14">
-        <PhoneFrame image={testCase.beforeImage} label="Antes" />
+        <PhoneFrame image={testCase.beforeImage} label={beforeLabel} />
         <div className="hidden md:flex items-center text-muted-foreground">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
           </svg>
         </div>
-        <PhoneFrame image={testCase.afterImage} label="Después" />
+        <PhoneFrame image={testCase.afterImage} label={afterLabel} />
       </div>
     </div>
   );
@@ -82,28 +83,29 @@ const TestingCard = ({ testCase, index }: { testCase: TestingCase; index: number
 
 const UserTestingSection = () => {
   const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
+  const { t } = useLanguage();
 
   const cases: TestingCase[] = [
     {
       beforeImage: chatBefore,
       afterImage: chatAfter,
-      problem: 'No queda claro el momento en el que aceptás la solicitud de servicio',
-      solution: 'Añadir más información en la solicitud de servicio, con íconos respectivos: título del problema, precio y fecha de la visita',
-      quote: 'Me gustaría confirmar lo que estoy aceptando, es una transacción',
+      problem: t('testing.case1.problem'),
+      solution: t('testing.case1.solution'),
+      quote: t('testing.case1.quote'),
     },
     {
       beforeImage: describiBefore,
       afterImage: perfilCarlos,
-      problem: 'El mensaje de contacto inicial no debe ser el mismo para todos los prestadores',
-      solution: 'Enviar un mensaje individual a cada prestador luego de evaluar su perfil',
-      quote: 'Estoy metiendo a alguien a mi casa, me quiero tomar el tiempo de contactar a cada prestador de forma personalizada. No es algo automático',
+      problem: t('testing.case2.problem'),
+      solution: t('testing.case2.solution'),
+      quote: t('testing.case2.quote'),
     },
     {
       beforeImage: chatPrestador,
       afterImage: chatAfter2,
-      problem: 'El botón de "ver servicio en curso" es pasado por alto por los usuarios',
-      solution: 'Reemplazar el enlace pasivo por una alerta visual destacada con un botón de acción claro que guíe al usuario hacia el servicio en curso',
-      quote: 'Parece un alerta, no un botón',
+      problem: t('testing.case3.problem'),
+      solution: t('testing.case3.solution'),
+      quote: t('testing.case3.quote'),
     },
   ];
 
@@ -119,20 +121,22 @@ const UserTestingSection = () => {
             transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
           }}
         >
-          <span className="text-accent font-medium tracking-wide uppercase text-sm">
-            Validación
-          </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold mt-3 mb-6">
-            User Testing
-          </h2>
-          <p className="text-body text-lg max-w-2xl mx-auto leading-relaxed">
-            Hallazgos clave de las pruebas con usuarios y cómo iteramos el diseño para resolverlos.
-          </p>
+          <span className="text-accent font-medium tracking-wide uppercase text-sm">{t('testing.label')}</span>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold mt-3 mb-6">{t('testing.title')}</h2>
+          <p className="text-body text-lg max-w-2xl mx-auto leading-relaxed">{t('testing.description')}</p>
         </div>
 
         <div className="flex flex-col gap-12">
           {cases.map((testCase, i) => (
-            <TestingCard key={i} testCase={testCase} index={i} />
+            <TestingCard
+              key={i}
+              testCase={testCase}
+              index={i}
+              problemLabel={t('testing.problemLabel')}
+              solutionLabel={t('testing.solutionLabel')}
+              beforeLabel={t('testing.before')}
+              afterLabel={t('testing.after')}
+            />
           ))}
         </div>
       </div>

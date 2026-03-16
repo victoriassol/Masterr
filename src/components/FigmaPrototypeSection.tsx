@@ -1,7 +1,9 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const FigmaPrototypeSection = () => {
   const { ref, isVisible } = useScrollAnimation();
+  const { t } = useLanguage();
 
   return (
     <section id="prototype" className="py-24 px-6 md:px-12 lg:px-24 bg-background">
@@ -14,15 +16,9 @@ const FigmaPrototypeSection = () => {
           transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
       >
-        <span className="text-accent font-medium tracking-wide uppercase text-sm">
-          Prototipo
-        </span>
-        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold mt-3 mb-6">
-          Explorá el diseño completo
-        </h2>
-        <p className="text-body text-lg mb-10 leading-relaxed">
-          Navegá el prototipo interactivo en Figma para ver todos los flujos y pantallas del proyecto.
-        </p>
+        <span className="text-accent font-medium tracking-wide uppercase text-sm">{t('figma.label')}</span>
+        <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold mt-3 mb-6">{t('figma.title')}</h2>
+        <p className="text-body text-lg mb-10 leading-relaxed">{t('figma.description')}</p>
         <a
           href="https://www.figma.com/design/31TjUM5dCXylapJCteqJTE/Masterr-UX-UI-Project?node-id=0-1&t=aZZapT5B2HZqegRu-1"
           target="_blank"
@@ -36,7 +32,7 @@ const FigmaPrototypeSection = () => {
             <path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="#F24E1E"/>
             <path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="#A259FF"/>
           </svg>
-          Ver prototipo en Figma
+          {t('figma.button')}
         </a>
       </div>
     </section>

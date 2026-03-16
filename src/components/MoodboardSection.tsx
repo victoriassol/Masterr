@@ -1,9 +1,11 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useLanguage } from '@/contexts/LanguageContext';
 import moodboardImg from '@/assets/moodboard.png';
 
 const MoodboardSection = () => {
   const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
   const { ref: imgRef, isVisible: imgVisible } = useScrollAnimation({ threshold: 0.15 });
+  const { t } = useLanguage();
 
   return (
     <section className="py-24 px-6 md:px-12 lg:px-24 bg-surface">
@@ -17,15 +19,9 @@ const MoodboardSection = () => {
             transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
           }}
         >
-          <span className="text-accent font-medium tracking-wide uppercase text-sm">
-            Inspiración
-          </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold mt-3 mb-6">
-            Moodboard
-          </h2>
-          <p className="text-body text-lg max-w-2xl mx-auto leading-relaxed">
-            Referencias visuales que guían la identidad y el tono del producto.
-          </p>
+          <span className="text-accent font-medium tracking-wide uppercase text-sm">{t('moodboard.label')}</span>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold mt-3 mb-6">{t('moodboard.title')}</h2>
+          <p className="text-body text-lg max-w-2xl mx-auto leading-relaxed">{t('moodboard.description')}</p>
         </div>
 
         <div
@@ -37,11 +33,7 @@ const MoodboardSection = () => {
             transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s',
           }}
         >
-          <img
-            src={moodboardImg}
-            alt="Moodboard con referencias visuales del proyecto"
-            className="w-full h-auto"
-          />
+          <img src={moodboardImg} alt="Moodboard" className="w-full h-auto" />
         </div>
       </div>
     </section>

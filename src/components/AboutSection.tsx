@@ -1,4 +1,5 @@
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { useLanguage } from '@/contexts/LanguageContext';
 import lisandroImg from '@/assets/team/lisandro.png';
 import victoriaImg from '@/assets/team/victoria.png';
 import juanaImg from '@/assets/team/juana.png';
@@ -6,52 +7,45 @@ import utnLogo from '@/assets/utn-logo.png';
 
 const AboutSection = () => {
   const { ref, isVisible } = useScrollAnimation();
+  const { t } = useLanguage();
 
   return (
     <section id="about" className="py-24 px-6 md:px-12 lg:px-24 bg-surface-elevated overflow-hidden">
-      <div 
+      <div
         ref={ref}
         className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center"
       >
-        {/* Left: Text Content */}
         <div className={`space-y-6 ${isVisible ? 'opacity-100 animate-slide-in-left' : 'opacity-0'}`}>
           <h2 className="font-display text-3xl md:text-4xl font-semibold">
-            ¿De qué se trata?
+            {t('about.title')}
           </h2>
           <p className="text-body text-lg leading-relaxed">
-            Masterr es una app que conecta personas que necesitan servicios para el hogar 
-            con profesionales confiables dentro de la comunidad.
+            {t('about.description')}
           </p>
           <div className="pt-4 border-t border-border">
             <h3 className="text-sm font-semibold text-accent uppercase tracking-wide mb-3">
-              Objetivo de la presentación
+              {t('about.objectiveLabel')}
             </h3>
             <p className="text-body leading-relaxed">
-              Mostrar el proceso de UX detrás de Masterr, desde el problema hasta la solución 
-              final, y explicar las decisiones de diseño tomadas.
+              {t('about.objectiveText')}
             </p>
           </div>
         </div>
 
-        {/* Right: Team, Context, Tools */}
         <div className={`flex flex-col items-center gap-6 ${isVisible ? 'opacity-100 animate-slide-in-right' : 'opacity-0'}`}>
-          {/* Photos row */}
           <div className="flex items-end justify-center">
-            {/* Lisandro */}
             <div className="-rotate-3 hover:rotate-0 transition-transform duration-500 -mr-3">
               <div className="w-[170px]">
                 <img src={lisandroImg} alt="Lisandro Perrone" className="w-full h-auto" />
               </div>
               <p className="text-xs text-muted-foreground text-center mt-1.5 font-medium">Lisandro Perrone</p>
             </div>
-            {/* Victoria - raised */}
             <div className="rotate-1 hover:rotate-0 transition-transform duration-500 -translate-y-12">
               <div className="w-[170px]">
                 <img src={victoriaImg} alt="Victoria Ecalle" className="w-full h-auto" />
               </div>
               <p className="text-xs text-muted-foreground text-center mt-1.5 font-medium">Victoria Ecalle</p>
             </div>
-            {/* Juana */}
             <div className="rotate-3 hover:rotate-0 transition-transform duration-500 -ml-3">
               <div className="w-[170px]">
                 <img src={juanaImg} alt="Juana Fuertes" className="w-full h-auto" />
@@ -60,15 +54,13 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* Context */}
           <div className="flex items-center gap-3">
             <img src={utnLogo} alt="UTN BA" className="h-10 object-contain" />
             <p className="text-body text-sm leading-relaxed">
-              Diplomatura en Diseño UX/UI — UTN Buenos Aires
+              {t('about.utn')}
             </p>
           </div>
 
-          {/* Tools */}
           <div className="flex items-center gap-5">
             <div className="flex flex-col items-center gap-1.5">
               <svg className="w-8 h-8" viewBox="0 0 38 57" fill="none"><path d="M19 28.5C19 23.2533 23.2533 19 28.5 19C33.7467 19 38 23.2533 38 28.5C38 33.7467 33.7467 38 28.5 38C23.2533 38 19 33.7467 19 28.5Z" fill="#1ABCFE"/><path d="M0 47.5C0 42.2533 4.25329 38 9.5 38H19V47.5C19 52.7467 14.7467 57 9.5 57C4.25329 57 0 52.7467 0 47.5Z" fill="#0ACF83"/><path d="M19 0V19H28.5C33.7467 19 38 14.7467 38 9.5C38 4.25329 33.7467 0 28.5 0H19Z" fill="#FF7262"/><path d="M0 9.5C0 14.7467 4.25329 19 9.5 19H19V0H9.5C4.25329 0 0 4.25329 0 9.5Z" fill="#F24E1E"/><path d="M0 28.5C0 33.7467 4.25329 38 9.5 38H19V19H9.5C4.25329 19 0 23.2533 0 28.5Z" fill="#A259FF"/></svg>

@@ -8,14 +8,20 @@ const Navigation = () => {
           <img src={logo} alt="Masterr" className="h-10" />
         </a>
         <div className="flex items-center gap-8">
+          <a href="#about" className="text-body hover:text-foreground transition-colors text-sm font-medium">
+            Proyecto
+          </a>
           <a href="#research" className="text-body hover:text-foreground transition-colors text-sm font-medium">
             Research
           </a>
           <a href="#design" className="text-body hover:text-foreground transition-colors text-sm font-medium">
-            Design
+            Diseño
           </a>
-          <a href="#results" className="text-body hover:text-foreground transition-colors text-sm font-medium">
-            Results
+          <a href="#testing" className="text-body hover:text-foreground transition-colors text-sm font-medium">
+            Testing
+          </a>
+          <a href="#prototype" className="text-body hover:text-foreground transition-colors text-sm font-medium">
+            Prototipo
           </a>
         </div>
       </div>

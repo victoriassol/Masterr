@@ -4,7 +4,7 @@ const FigmaPrototypeSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-24 bg-background">
+    <section id="prototype" className="py-24 px-6 md:px-12 lg:px-24 bg-background">
       <div
         ref={ref}
         className="max-w-3xl mx-auto text-center"

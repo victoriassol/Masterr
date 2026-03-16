@@ -6,7 +6,7 @@ const ResearchSection = () => {
   const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
 
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-24 bg-surface-elevated">
+    <section id="research" className="py-24 px-6 md:px-12 lg:px-24 bg-surface-elevated">
       <div className="max-w-6xl mx-auto">
         <div
           ref={titleRef}

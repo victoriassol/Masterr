@@ -8,7 +8,7 @@ const AboutSection = () => {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-24 bg-surface-elevated overflow-hidden">
+    <section id="about" className="py-24 px-6 md:px-12 lg:px-24 bg-surface-elevated overflow-hidden">
       <div 
         ref={ref}
         className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 items-center"

@@ -35,23 +35,27 @@ const SurveyChart = ({ direction, delay, title, description, bars }: SurveyChart
         </div>
         
         <div className="lg:w-2/3 space-y-4">
-          {bars.map((bar, index) => (
-            <div key={index} className="flex items-center gap-4">
-              <span className="text-sm text-body w-32 shrink-0">{bar.label}</span>
-              <div className="flex-1 h-8 bg-secondary rounded-lg overflow-hidden">
-                <div 
-                  className="h-full rounded-lg transition-all duration-1000 ease-out"
-                  style={{ 
-                    width: `${bar.value}%`,
-                    backgroundColor: bar.color,
-                    opacity: isVisible ? 1 : 0,
-                    transitionDelay: `${delay + index * 100}ms`
-                  }}
-                />
+          {bars.map((bar, index) => {
+            const maxValue = Math.max(...bars.map(b => b.value));
+            const scaledWidth = (bar.value / maxValue) * 100;
+            return (
+              <div key={index} className="flex items-center gap-4">
+                <span className="text-sm text-body w-32 shrink-0">{bar.label}</span>
+                <div className="flex-1 h-8 bg-secondary rounded-lg overflow-hidden">
+                  <div 
+                    className="h-full rounded-lg transition-all duration-1000 ease-out"
+                    style={{ 
+                      width: `${scaledWidth}%`,
+                      backgroundColor: bar.color,
+                      opacity: isVisible ? 1 : 0,
+                      transitionDelay: `${delay + index * 100}ms`
+                    }}
+                  />
+                </div>
+                <span className="text-sm font-medium w-12 text-right">{bar.value}%</span>
               </div>
-              <span className="text-sm font-medium w-12 text-right">{bar.value}%</span>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>

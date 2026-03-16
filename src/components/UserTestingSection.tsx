@@ -108,7 +108,7 @@ const UserTestingSection = () => {
   ];
 
   return (
-    <section className="py-24 px-6 md:px-12 lg:px-24 bg-surface-elevated">
+    <section id="testing" className="py-24 px-6 md:px-12 lg:px-24 bg-surface-elevated">
       <div className="max-w-5xl mx-auto">
         <div
           ref={titleRef}

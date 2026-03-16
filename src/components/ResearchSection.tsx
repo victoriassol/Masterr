@@ -54,10 +54,10 @@ const ResearchSection = () => {
               title="¿Cómo encontrás el contacto de los prestadores?"
               description="Canales de descubrimiento de profesionales"
               bars={[
-                { label: "Referencia de conocidos", value: 49, color: "bg-accent" },
-                { label: "Redes sociales", value: 15, color: "bg-primary" },
-                { label: "Carteles callejeros", value: 6, color: "bg-muted-foreground/60" },
-                { label: "Recomendación inmobiliaria", value: 1, color: "bg-muted-foreground/40" },
+                { label: "Referencia de conocidos", value: 49, color: "#FB3748" },
+                { label: "Redes sociales", value: 15, color: "#222587" },
+                { label: "Carteles callejeros", value: 6, color: "#14934F" },
+                { label: "Recomendación inmobiliaria", value: 1, color: "#F6FF4A" },
               ]}
             />
             <SurveyChart

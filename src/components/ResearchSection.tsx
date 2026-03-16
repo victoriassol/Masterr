@@ -1,9 +1,11 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useLanguage } from "@/contexts/LanguageContext";
 import SurveyChart from "./SurveyChart";
 import InsightCard from "./InsightCard";
 
 const ResearchSection = () => {
   const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
+  const { t } = useLanguage();
 
   return (
     <section id="research" className="py-24 px-6 md:px-12 lg:px-24 bg-surface-elevated">
@@ -16,92 +18,74 @@ const ResearchSection = () => {
             transition: "all 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
           }}
         >
-          <span className="text-accent font-medium tracking-wide uppercase text-sm">Metodología</span>
+          <span className="text-accent font-medium tracking-wide uppercase text-sm">{t('research.methodLabel')}</span>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold mt-3 mb-6">
-            Investigación Cuantitativa y Cualitativa
+            {t('research.title')}
           </h2>
           <p className="text-body text-lg max-w-3xl leading-relaxed">
-            Combinamos métodos cuantitativos y cualitativos para aprender las necesidades, comportamientos y
-            motivaciones de las personas a la hora de contratar a un prestador para su hogar.
+            {t('research.description')}
           </p>
         </div>
 
-        {/* Encuestas Section */}
         <div className="mt-20">
           <div className="mb-12">
-            <h3 className="font-display text-2xl md:text-3xl font-semibold mb-4">Encuestas</h3>
-            <p className="text-body text-lg max-w-2xl">Tamaño de muestra: 50 participantes.</p>
+            <h3 className="font-display text-2xl md:text-3xl font-semibold mb-4">{t('research.surveysTitle')}</h3>
+            <p className="text-body text-lg max-w-2xl">{t('research.sampleSize')}</p>
           </div>
 
           <div className="space-y-8">
             <SurveyChart
               direction="left"
               delay={0}
-              title="¿Qué tipo de servicio contratás más seguido?"
-              description="Servicios más demandados por los usuarios encuestados"
+              title={t('survey.q1.title')}
+              description={t('survey.q1.desc')}
               bars={[
-                { label: "Plomería y gas", value: 44, color: "#FB3748" },
-                { label: "Albañilería", value: 31, color: "#222587" },
-                { label: "Reparación electrodomésticos", value: 31, color: "#14934F" },
-                { label: "Electricidad", value: 30, color: "#F6FF4A" },
-                { label: "Pintura", value: 12, color: "#BAFD3E" },
-                { label: "Mudanzas", value: 10, color: "#FB3748" },
+                { label: t('bar.plumbing'), value: 44, color: "#FB3748" },
+                { label: t('bar.masonry'), value: 31, color: "#222587" },
+                { label: t('bar.appliances'), value: 31, color: "#14934F" },
+                { label: t('bar.electrical'), value: 30, color: "#F6FF4A" },
+                { label: t('bar.painting'), value: 12, color: "#BAFD3E" },
+                { label: t('bar.moving'), value: 10, color: "#FB3748" },
               ]}
             />
             <SurveyChart
               direction="right"
               delay={150}
-              title="¿Cómo encontrás el contacto de los prestadores?"
-              description="Canales de descubrimiento de profesionales"
+              title={t('survey.q2.title')}
+              description={t('survey.q2.desc')}
               bars={[
-                { label: "Referencia de conocidos", value: 49, color: "#FB3748" },
-                { label: "Redes sociales", value: 15, color: "#222587" },
-                { label: "Carteles callejeros", value: 6, color: "#14934F" },
-                { label: "Recomendación inmobiliaria", value: 1, color: "#F6FF4A" },
+                { label: t('bar.referrals'), value: 49, color: "#FB3748" },
+                { label: t('bar.social'), value: 15, color: "#222587" },
+                { label: t('bar.signs'), value: 6, color: "#14934F" },
+                { label: t('bar.realEstate'), value: 1, color: "#F6FF4A" },
               ]}
             />
             <SurveyChart
               direction="left"
               delay={300}
-              title="¿Qué tenés más en cuenta a la hora de contratar?"
-              description="Factores de decisión más importantes"
+              title={t('survey.q3.title')}
+              description={t('survey.q3.desc')}
               bars={[
-                { label: "Reputación / Opiniones", value: 44, color: "#FB3748" },
-                { label: "Precio", value: 41, color: "#222587" },
-                { label: "Experiencia", value: 18, color: "#14934F" },
-                { label: "Disponibilidad", value: 11, color: "#F6FF4A" },
-                { label: "Certificaciones / Licencias", value: 5, color: "#BAFD3E" },
+                { label: t('bar.reputation'), value: 44, color: "#FB3748" },
+                { label: t('bar.price'), value: 41, color: "#222587" },
+                { label: t('bar.experience'), value: 18, color: "#14934F" },
+                { label: t('bar.availability'), value: 11, color: "#F6FF4A" },
+                { label: t('bar.certifications'), value: 5, color: "#BAFD3E" },
               ]}
             />
           </div>
         </div>
 
-        {/* Entrevistas Section */}
         <div className="mt-24">
           <div className="mb-12">
-            <h3 className="font-display text-2xl md:text-3xl font-semibold mb-4">Entrevistas</h3>
-            <p className="text-body text-lg max-w-2xl">Tamaño de muestra: 3 participantes.</p>
+            <h3 className="font-display text-2xl md:text-3xl font-semibold mb-4">{t('research.interviewsTitle')}</h3>
+            <p className="text-body text-lg max-w-2xl">{t('research.interviewSample')}</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <InsightCard
-              number={1}
-              title="Me cuesta encontrar a alguien con buenas referencias."
-              description="Las personas priorizan contratar profesionales recomendados o con buen historial y desconfían de la búsqueda abierta en internet."
-              delay={0}
-            />
-            <InsightCard
-              number={2}
-              title="El trabajo se hizo más largo de lo esperado y todos los arreglos extras quedaron sin registrar."
-              description="Durante el trabajo suelen aparecer cambios, y si no quedan registrados terminan en confusiones."
-              delay={150}
-            />
-            <InsightCard
-              number={3}
-              title="Tendría que ser como un Rappi de servicios tipo Mercado Libre."
-              description="Las personas buscan una experiencia más rápida y eficiente, con plazos y acuerdos claros."
-              delay={300}
-            />
+            <InsightCard number={1} title={t('insight.1.title')} description={t('insight.1.desc')} delay={0} />
+            <InsightCard number={2} title={t('insight.2.title')} description={t('insight.2.desc')} delay={150} />
+            <InsightCard number={3} title={t('insight.3.title')} description={t('insight.3.desc')} delay={300} />
           </div>
         </div>
       </div>

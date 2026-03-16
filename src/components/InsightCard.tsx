@@ -24,7 +24,7 @@ const InsightCard = ({ number, title, description, delay }: InsightCardProps) =>
         <span className="text-accent font-display text-xl font-semibold">{number}</span>
       </div>
       <h4 className="font-display text-lg font-semibold mb-3 leading-snug">
-        {title}
+        "{title}"
       </h4>
       <p className="text-body text-sm leading-relaxed">
         {description}

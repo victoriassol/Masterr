@@ -20,8 +20,7 @@ const AboutSection = () => {
           </h2>
           <p className="text-body text-lg leading-relaxed">
             Masterr es una app que conecta personas que necesitan servicios para el hogar 
-            con profesionales confiables, a través de recomendaciones tipo boca a boca 
-            dentro de la comunidad.
+            con profesionales confiables dentro de la comunidad.
           </p>
           <div className="pt-4 border-t border-border">
             <h3 className="text-sm font-semibold text-accent uppercase tracking-wide mb-3">

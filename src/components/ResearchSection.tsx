@@ -40,12 +40,12 @@ const ResearchSection = () => {
               title="¿Qué tipo de servicio contratás más seguido?"
               description="Servicios más demandados por los usuarios encuestados"
               bars={[
-                { label: "Plomería y gas", value: 44, color: "bg-accent" },
-                { label: "Albañilería", value: 31, color: "bg-primary" },
-                { label: "Reparación electrodomésticos", value: 31, color: "bg-primary/80" },
-                { label: "Electricidad", value: 30, color: "bg-primary/60" },
-                { label: "Pintura", value: 12, color: "bg-muted-foreground/60" },
-                { label: "Mudanzas", value: 10, color: "bg-muted-foreground/40" },
+                { label: "Plomería y gas", value: 44, color: "#FB3748" },
+                { label: "Albañilería", value: 31, color: "#222587" },
+                { label: "Reparación electrodomésticos", value: 31, color: "#14934F" },
+                { label: "Electricidad", value: 30, color: "#F6FF4A" },
+                { label: "Pintura", value: 12, color: "#BAFD3E" },
+                { label: "Mudanzas", value: 10, color: "#FB3748" },
               ]}
             />
             <SurveyChart

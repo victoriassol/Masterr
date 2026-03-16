@@ -66,11 +66,11 @@ const ResearchSection = () => {
               title="¿Qué tenés más en cuenta a la hora de contratar?"
               description="Factores de decisión más importantes"
               bars={[
-                { label: "Reputación / Opiniones", value: 44, color: "bg-accent" },
-                { label: "Precio", value: 41, color: "bg-primary" },
-                { label: "Experiencia", value: 18, color: "bg-primary/60" },
-                { label: "Disponibilidad", value: 11, color: "bg-muted-foreground/60" },
-                { label: "Certificaciones / Licencias", value: 5, color: "bg-muted-foreground/40" },
+                { label: "Reputación / Opiniones", value: 44, color: "#FB3748" },
+                { label: "Precio", value: 41, color: "#222587" },
+                { label: "Experiencia", value: 18, color: "#14934F" },
+                { label: "Disponibilidad", value: 11, color: "#F6FF4A" },
+                { label: "Certificaciones / Licencias", value: 5, color: "#BAFD3E" },
               ]}
             />
           </div>

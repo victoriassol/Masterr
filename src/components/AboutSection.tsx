@@ -42,21 +42,21 @@ const AboutSection = () => {
               <div className="w-[170px]">
                 <img src={lisandroImg} alt="Lisandro Perrone" className="w-full h-auto" />
               </div>
-              <p className="text-xs text-muted-foreground text-center mt-1.5 font-medium">Lisandro</p>
+              <p className="text-xs text-muted-foreground text-center mt-1.5 font-medium">Lisandro Perrona</p>
             </div>
             {/* Victoria - raised */}
             <div className="rotate-1 hover:rotate-0 transition-transform duration-500 -translate-y-12">
               <div className="w-[170px]">
                 <img src={victoriaImg} alt="Victoria Ecalle" className="w-full h-auto" />
               </div>
-              <p className="text-xs text-muted-foreground text-center mt-1.5 font-medium">Victoria</p>
+              <p className="text-xs text-muted-foreground text-center mt-1.5 font-medium">Victoria Ecalle</p>
             </div>
             {/* Juana */}
             <div className="rotate-3 hover:rotate-0 transition-transform duration-500 -ml-3">
               <div className="w-[170px]">
                 <img src={juanaImg} alt="Juana Fuertes" className="w-full h-auto" />
               </div>
-              <p className="text-xs text-muted-foreground text-center mt-1.5 font-medium">Juana</p>
+              <p className="text-xs text-muted-foreground text-center mt-1.5 font-medium">Juana Fuertes</p>
             </div>
           </div>
 
